@@ -1,0 +1,710 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CodeNoor</title>
+
+    <meta
+        name="description"
+        content=""
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Background Canvas -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- Background Overlay -->
+    <div class="noise-vignette" aria-hidden="true"></div>
+
+
+    <div class="wrap">
+
+        <!-- ==================== NAVBAR ==================== -->
+
+        <nav id="nav">
+
+            <div class="logo">
+              <img src={% static "images/logonoor.png" %} alt=""> 
+            </div>
+
+            <div class="nav-links">
+
+               <a href="#about">
+                   درباره من
+                </a>
+                <a href="#Experience">
+                   تجربه‌های کاری
+                </a>
+
+                <a href="#web-projects">
+                    پروژه‌های سایت
+                </a>
+
+                <a href="#creative">
+                    پروژه‌های دلی 
+                </a>
+
+                <a href="#contact">
+                    تماس
+                </a>
+            </div>
+
+            <button
+                class="mobile-menu-toggle"
+                type="button"
+                aria-label="باز کردن منوی ناوبری"
+                aria-expanded="false"
+                aria-controls="mobileMenu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+                <a href="#about">
+                   درباره من
+                </a>
+                 <a href="#Experience">
+                   تجربه‌های کاری
+                </a>
+                
+                <a href="#research">
+                    مقالات دانشگاهی
+                </a>
+                <a href="#web-projects">
+                    پروژه‌های سایت
+                </a>
+
+                <a href="#creative">
+                   پروژه‌های دلی 
+                </a>
+
+                <a href="#contact">
+                    تماس
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- ==================== HERO ==================== -->
+
+        <section class="hero" id="hero">
+           
+            <div class="hero-inner">
+
+                <h1>
+                  Code Noor
+                </h1>
+                
+                <p class="sub">
+                    I turn ideas into something you can see
+                </p>
+
+            </div>
+            
+
+            <!-- Scroll Cue -->
+
+            <div class="scroll-cue" id="scrollCue">
+
+                <span>
+                    اسکرول کنید
+                </span>
+
+                <div class="line"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== درماره ما ==================== -->
+
+       <section class="about-section" id="about">
+
+        <div class="about-card">
+
+        <div class="gold-line line-top"></div>
+        <div class="gold-line line-right"></div>
+        <div class="gold-line line-bottom"></div>
+        <div class="gold-line line-left"></div>
+
+        <div class="about-content">
+
+            <span class="about-small-title">درباره من </span>
+
+            <p>
+                {{ about_me.description1}}
+            </p>
+
+            <p>
+                 {{ about_me.description2}}
+            </p>
+
+            <div class="about-skills">
+                <span>{{ about_me.skill1}}</span>
+                <span>{{ about_me.skill2}}</span>
+                <span>{{ about_me.skill3}}</span>              
+                <span> {{ about_me.skill4}}</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+ <!-- ==================== تجربه ==================== -->
+
+
+<section class="experience"id="Experience">
+  <h2 class="experience-title">تجربه‌های کاری</h2>
+
+  <div class="timeline">
+    <!-- 2024 -->
+    <div class="timeline-item">
+      <div class="card card-dark top">
+        <div class="paperclip"></div>
+        <h3>{{ ExperienceView.title}}</h3>
+        <p> {{ ExperienceView.description}}</p>
+      </div>
+      <div class="dot"></div>
+      <div class="year">{{ ExperienceView.date}}</div>
+    </div>
+
+    <!-- 2025 -->
+    <div class="timeline-item">
+      <div class="card card-light bottom">
+        <div class="paperclip"></div>
+        <h3>دستیار آموزشی </h3>
+        <p>تی‌ای درس کارگاه کامپیوتر دانشگاه قم</p>
+      </div>
+      <div class="dot"></div>
+      <div class="year">۱۴۰۳-۱۴۰۴</div>
+    </div>
+
+    <!-- 2026 -->
+    <div class="timeline-item">
+      <div class="card card-dark top">
+        <div class="paperclip"></div>
+        <h3>ﻋﻀﻮﯾﺖ ﻓﻌﺎل در اﻧﺠﻤﻦ ﻫﺎ و ﮔﺮوه ﻫﺎی داﻧﺸﮕﺎﻫﯽ</h3>
+        <p>ﻧﺠﻤﻦ ﻋﻠﻤﯽ ﻋﻠﻮم ﮐﺎﻣﭙﯿﻮﺗﺮ
+        ﮐﺎﻧﻮن ﺧﯿﺮﯾﻪ ﺑﻮی زﻧﺪﮔﯽ داﻧﺸﮕﺎه ﻗﻢ</p>
+      </div>
+      <div class="dot"></div>
+      <div class="year">از ۱۴۰۲ تا به الان</div>
+    </div>
+
+    <!-- 2027 -->
+    <div class="timeline-item">
+      <div class="card card-light bottom">
+        <div class="paperclip"></div>
+        <h3>تدریس مبانی برنامه نویسی</h3>
+        <p></p>
+      </div>
+      <div class="dot"></div>
+      <div class="year">۱۴۰۴</div>
+    </div>
+  </div>
+</section>
+
+        <!-- ==================== مقاله ==================== -->
+
+<section class="research-section" id="research">
+
+    <div class="research-heading">
+
+        <span>
+            پژوهش و دانشگاه
+        </span>
+
+        <h2>
+            فعالیت‌های علمی
+        </h2>
+
+        <p>
+           پژوهش‌ها، پروژه‌های دانشگاهی و مطالعات فنی‌ای که روی آن‌ها کار کرده‌ام.
+        </p>
+
+    </div>
+
+
+    <div class="research-grid">
+
+
+{% for article  in article   %}
+        <article class="research-card">
+ 
+
+            <h3>
+                {{ article.title}}
+            </h3>
+
+
+            <p>
+                {{ article.description}}
+            </p>
+            <div class="project-links"style="button:100px">
+
+                    <a
+                        href="{{article.link}}"
+                        class="gold-btn project-view-trigger"
+
+                    >
+                      مشاهده ویدئو توضیحات
+                    </a>
+                </div>  
+                <br>      
+
+
+
+{% if article.pdf %}
+<div class="pdf-viwer">
+    <iframe
+        src="{{ article.pdf.url }}"
+        width="100%"
+        height="500"
+        style="border: none;">
+    </iframe>
+</div>
+
+
+    <a
+        href="{{ article.pdf.url }}"
+        target="_blank"
+        class="paper-link">
+       خواندن مقاله ↗
+    </a>
+
+ {% endif %}   
+
+        </article>
+
+{%endfor%}
+    </div>
+
+</section>
+
+        <!-- ==================== سایت ==================== -->
+
+<section class="web-projects" id="web-projects">
+
+    <div class="section-heading">
+
+        <span>آثار منتخب</span>
+
+        <h2>پروژه‌های طراحی وب‌سایت</h2>
+
+        <p>
+            وب‌سایت‌ها و تجربه‌های دیجیتالی که طراحی و توسعه داده‌ام.
+        </p>
+
+    </div>
+
+
+    <div class="web-project-list">
+
+ {% for project in projects  %}
+
+        <article
+            class="web-project-card"
+             {%if project.video%}
+             data-proq-video="{{project.video.url}}"
+             {%endif%}>
+
+            <div class="project-image">
+                
+
+                {% if project.video %}
+                    <video controls>
+                        <source src="{{ project.video.url }}" type="video/mp4">
+                    </video>
+                
+                {% elif project.image %}
+                    <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                {% endif %}
+
+            </div>
+
+           
+
+            <div class="web-project-content">
+
+                <h3>
+                  {{project.title}}
+                </h3>
+
+                <p>
+                   {{project.description}}
+                </p>
+
+                <div class="project-links">
+
+                    <a
+                        href="{{project.link}}"
+                        class="gold-btn project-view-trigger"
+                    >
+                      مشاهده به صورت لایو یا ریپازیتوری گیت‌هاب
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+        {%empty%}
+        <p>هنوز پروژه اضافه نشده است</p>
+        {%endfor%}
+        
+
+    </div>
+
+</section>
+
+
+
+        <!-- ==================== AI ==================== -->
+<section class="creative-section" id="creative">
+
+    <div class="creative-header">
+
+        <span>آثار خلاقانه من</span>
+
+        <h2>طراحی تیزرهای تبلیغاتی</h2>
+
+        <p>
+            طراحی و تولید محتوای ویدیویی و تیزرهای تبلیغاتی؛
+            مسیری خلاقانه که در کنار فعالیت‌های اصلی‌ام دنبال می‌کنم.
+        </p>
+
+    </div>
+
+
+    <div class="creative-grid">
+
+        {% for ai_project in ai_projects %}
+
+        <article
+            class="creative-card"
+
+            {% if ai_project.video %}
+                data-project-video="{{ ai_project.video.url }}"
+            {% endif %}
+        >
+
+            <div class="project-image">
+
+                {% if ai_project.video %}
+
+                    <video
+                        class="relse "
+                        controls
+                        playsinline
+                    >
+                        <source
+                            src="{{ ai_project.video.url }}"
+                            type="video/mp4"
+                        >
+
+                        مرورگر شما از ویدئو پشتیبانی نمی‌کند.
+
+                    </video>
+
+                {% elif ai_project.image %}
+
+                    <img
+                        src="{{ ai_project.image.url }}"
+                        alt="{{ ai_project.title }}"
+                    >
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="project-info">
+
+
+                <h3>
+                    {{ ai_project.title }}
+                </h3>
+
+                <p>
+                    {{ ai_project.description }}
+                </p>
+
+            </div>
+
+        </article>
+
+        {% endfor %}
+
+    </div>
+
+
+    <a href="#" class="instagram-btn">
+
+        <span>
+            دیدن بیشتر در اینستاگرام
+        </span>
+
+        <span>
+            ↗
+        </span>
+
+    </a>
+
+</section>
+  
+
+  <!-- ==================== کامنت ==================== -->
+
+ <section id="contact">
+
+    <div class="container">
+
+      <div
+        class="section-head"
+        style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
+      >
+
+        <div class="section-label">
+            ارتباط
+        </div>
+
+        <h2>
+            بیایید با هم کار کنیم
+        </h2>
+        
+      </div>
+
+    <form
+        class="contact-form"
+        method="POST"
+        action="{% url 'Contacts' %}"
+    >
+        {% csrf_token %}
+
+        <div class="form-row">
+
+          <input
+            name="name"
+            type="text"
+            placeholder="نام و نام خانوادگی"
+            required=""
+          >
+
+          <input
+            name="email"
+            type="email"
+            placeholder="ایمیل"
+            required=""
+          >
+
+        </div>
+
+        <textarea
+            name="message"
+            placeholder="پیام یا توضیح پروژه..."
+            required=""
+        ></textarea>
+
+        <button
+            type="submit"
+            class="btn-submit"
+        >
+            ارسال پیام
+        </button>
+
+      </form>
+
+    </div>
+
+</section>
+
+
+
+        <!-- ==================== FOOTER ==================== -->
+
+        <footer id="contact">
+
+            <div class="container">
+
+                <div class="footer-top">
+
+
+                    <!-- Footer Brand -->
+
+                    <div class="footer-brand">
+
+                     
+            <div class="logo">
+              <img src={% static "images/logonoor.png" %} alt=""> 
+            </div>
+                    </div>
+
+
+                    <!-- Footer Links -->
+
+                    <div class="footer-cols">
+
+
+                        <!-- Site Map -->
+                         <div class="footer-col">
+
+                            <a href="#about">
+                                درباره من
+                             </a>
+                             <a href="#web-projects">
+                                 پروژه‌های سایت
+                             </a>
+                         
+                             <a href="#creative">
+                                 پروژه‌های AI
+                             </a>
+                         
+                             <a href="#research">
+                                 مقالات دانشگاهی
+                             </a>
+                              <a href="#Experience">
+                                تجربه‌های کاری
+                             </a>
+                         
+                             <a href="#contact">
+                                 تماس
+                             </a>
+                         </div>
+
+
+                        <!-- Contact -->
+
+                        <div class="footer-col">
+
+                            <h4>
+                                ارتباط
+                            </h4>
+
+                            <a href=""{{ social.GitHub }}"">
+                                گیت‌هاب
+                            </a>
+
+                            <a href=""{{ social.Linkdin }}"">
+                                لینکدین
+                            </a>
+
+                            <a href="">
+                                تلگرام
+                            </a>
+
+                            <a href="https://www.instagram.com/mycodenoor">
+                                اینستاگرام
+                            </a>
+
+                            <a href="zahranooriha@gmail.com">
+                                ایمیل
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Footer Bottom -->
+
+                <div class="footer-bottom">
+
+                    <a href="#hero">
+                        بازگشت به بالا ↑
+                    </a>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <!-- ==================== PROJECT VIDEO MODAL ==================== -->
+
+    <div
+        class="project-video-modal"
+        id="projectVideoModal"
+        aria-hidden="true"
+        role="dialog"
+        aria-modal="true"
+        aria-label="نمایش ویدئوی پروژه"
+    >
+
+        <div class="project-video-dialog">
+
+            <button
+                class="project-video-close"
+                type="button"
+                aria-label="بستن ویدئو"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="project-video-frame">
+
+                <video
+                    id="projectModalVideo"
+                    controls
+                    playsinline
+                    preload="metadata"
+                >
+                    مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.
+                </video>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== JAVASCRIPT LIBRARIES ==================== -->
+
+    <script src={% static "js/three.min.js" %}></script>
+
+    <script src={% static "js/gsap.min.js" %}></script>
+
+    <script src={% static "js/ScrollTrigger.min.js"%}></script>
+
+
+    <!-- Main JavaScript -->
+
+    <script src={% static "js/script.js" %}></script>
+
+</body>
+
+</html>
