@@ -15,9 +15,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ====================== SECURITY ======================
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-@zw4gdhqssl=i4r&d7uenn6_b*$yk^*pasv0rkh63!q)&ww#kn')
 
-DEBUG = 'RENDER' not in os.environ
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']   # موقتی برای تست
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
